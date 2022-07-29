@@ -106,5 +106,32 @@ private String alter_Email;
         System.out.println("Alternate Mail : "+ this.alter_Email );
         System.out.println("Email Capacity : "+this.MailCapacity);
     }
-
+    public void StoreInFile(){
+        try{
+            FileWriter in = new FileWriter("./index.txt");//Specify the name
+            in.write("First name : "+this.Fname);
+            in.append("\nLast name : "+this.Lname);
+            in.append("\nPassword : "+this.Password);
+            in.append("\nEmail : "+this.Email);
+            in.append("\nAlternate Email : "+this.alter_Email);
+            in.append("\nAlternate Mail Capicity: "+this.MailCapacity);
+            in.close();
+            System.out.println("Data Stored ....");
+        }catch(Exception e){
+System.out.println(e);
+        }
+    }
+    public void Read_File(){
+        try{
+            FileReader f1 = new FileReader("./index.txt");
+            int i ;
+            while((i=f1.read())!=-1){
+                System.out.print((char)i);
+            }
+            System.out.println("Reading File Done.");
+            f1.close();
+        }catch(Exception e){
+            System.out.println("Error while reading file "+e.getMessage());
+        }
+    }
 }

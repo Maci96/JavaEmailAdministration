@@ -11,13 +11,16 @@ public class EmailApp {
         Email  email = new Email(Fname,Lname);
         int choice = -1;
         do{
-            System.out.println("********\n Enter your choice\n1.show Info\n2.Change Password\n3.Change Mailbox Capacity \n4.Set Alternate Mail ");
+            System.out.println("********\n Enter your choice\n1.show Info\n2.Change Password\n3.Change Mailbox Capacity \n4.Set Alternate Mail\n5 Save into file\n6 Read File\n7 exit ");
             choice=sc.nextInt();
             switch(choice){
                 case 1 : email.getInfo();choice=-1;break;
                 case 2 : email.setPassword();choice=-1;break;
                 case 3 : email.setMailCapacity();choice=-1;break;
                 case 4 : email.setAlter_Email();choice=-1;break;
+                case 5 : email.StoreInFile();choice=-1;break;
+                case 6 : email.Read_File();choice=-1;break;
+                case 7 : System.exit(200);break;
                 default:System.out.println("Invalid choice !! enter other choice ....");choice=-1;break;
             }
         }while(choice==-1);
